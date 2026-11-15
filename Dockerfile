@@ -1,4 +1,3 @@
-
 FROM debian:trixie-slim
 
 # Prevent interactive installation prompts
