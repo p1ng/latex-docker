@@ -34,8 +34,8 @@ elif [[ -f "$TARGET" && "$TARGET" == *.tex ]]; then
     DIRECTORY="$(dirname "$TARGET")"
     FILENAME="$(basename "$TARGET")"
     mkdir -p "$DIRECTORY/build"
-    COMMAND=(latexmk "$MODE" -bibtex -interaction=nonstopmode \
-         -halt-on-error -outdir=build "./$FILENAME")
+    COMMAND=(latexmk "$MODE" -interaction=nonstopmode \
+             -halt-on-error -outdir=build "./$FILENAME")
 else
     echo "Expected a directory or .tex file." >&2
     exit 1
@@ -55,4 +55,3 @@ if [[ -d "$TARGET" ]]; then
 fi
 
 exec docker run "${DOCKER_ARGS[@]}" "$IMAGE" "${COMMAND[@]}"
-
