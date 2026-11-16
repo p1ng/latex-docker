@@ -55,4 +55,3 @@ if [[ -d "$TARGET" ]]; then
 fi
 
 exec docker run "${DOCKER_ARGS[@]}" "$IMAGE" "${COMMAND[@]}"
-
